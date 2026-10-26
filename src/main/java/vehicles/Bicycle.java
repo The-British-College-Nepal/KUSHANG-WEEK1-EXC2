@@ -1,5 +1,7 @@
 package vehicles;
 
+import com.sun.jdi.connect.IllegalConnectorArgumentsException;
+
 /**
  * Step 1: Complete the Bicycle subclass.
  * Extends {@link Vehicle}.
@@ -22,21 +24,24 @@ public class Bicycle extends Vehicle {
         super(model, maxSpeed, 1);
 
         // TODO [Step 1.1]: Validate gearCount > 0. If gearCount <= 0, throw IllegalArgumentException
-        // Hint: if (gearCount <= 0) throw new IllegalArgumentException("Gear count must be positive");
+        if (gearCount <= 0) throw new IllegalArgumentException("Gear count must be positive");
 
         // TODO [Step 1.2]: Assign gearCount to this.gearCount
+        this.gearCount = gearCount;
     }
 
     public int getGearCount() {
         // TODO [Step 1.3]: Return gearCount
-        return 0;
+        return gearCount;
     }
 
     @Override
     public double calculateTravelTime(double distanceInKm) {
         // TODO [Step 1.4]: Check distanceInKm > 0. If distanceInKm <= 0, throw IllegalArgumentException
-
+        if (distanceInKm <= 0){
+            throw new IllegalArgumentException("Distance must be positive");
+        }
         // TODO [Step 1.5]: Return distanceInKm / getMaxSpeed()
-        return 0.0;
+        return distanceInKm / getMaxSpeed();
     }
 }
