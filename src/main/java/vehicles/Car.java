@@ -25,9 +25,7 @@ public class Car extends Vehicle {
         super(model, maxSpeed, passengerCapacity);
 
         // TODO [Step 2.1]: Validate fuelLevelPercent is between 0 and 100 (inclusive).
-        If (fuelLevelPercent < 0 || fuelLevelPercent > 100){
-            throw new IllegalArgumentException("")
-        }
+        // If fuelLevelPercent < 0 or fuelLevelPercent > 100, throw IllegalArgumentException
 
         // TODO [Step 2.2]: Assign fuelLevelPercent
     }
